@@ -2,7 +2,7 @@
 #define SO_LONG_H
 
 #include "./minilibx-linux/mlx.h"
-#include <mlx.h>
+//#include <mlx.h>
 # include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
@@ -11,6 +11,23 @@
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 10
 # endif
+
+typedef     struct so_long
+{
+    int fd;
+    char *line;
+    int count;
+    int i;
+    int j;
+    int width_map;
+    int hight_map;
+    char **map;
+    int count_C;
+    int count_P;
+    int count_E;
+
+} t_so_long;
+
 
 //get_next_line.c
 char	*ft_read_creat(int fd, char *s);
@@ -28,6 +45,7 @@ size_t	ft_strlen(const char *s);
 char	*ft_strrchr(const char *str, int c);
 int	    ft_strcmp(char *s1, char *s2);
 void	ft_putstr_fd(char *s, int fd);
+char	*ft_strcpy(char *dest, char *src);
 
 
 #endif
