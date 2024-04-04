@@ -16,6 +16,8 @@ char	*ft_strrchr(const char *str, int c)
 
 int	ft_strcmp(char *s1, char *s2)
 {
+	if (s1 == NULL || s2 == NULL)
+		return -1;
 	while (*s1 && *s2 && *s1 == *s2)
 	{
 		s1++;

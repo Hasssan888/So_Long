@@ -1,6 +1,6 @@
 CC = cc 
 
-FLAGC = -Wall -Wextra -Werror #-fsanitize=address -g
+FLAGC = -Wall -Wextra -Werror -fsanitize=address -g3
 
 NAME = so_long
 
@@ -17,7 +17,7 @@ OBJE = ${SRC:.c=.o}
 all : ${NAME}
 
 ${NAME} : ${OBJE}
-	${CC} ${FLAGC} -o ${NAME} ${OBJE}
+	${CC} ${FLAGC} ${OBJE} -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz -o $(NAME)
 
 #${BONUS} : ${OBJE_bonus}
 #	${CC} ${FLAGC} -o ${BONUS} ${OBJE_bonus}
@@ -25,7 +25,7 @@ ${NAME} : ${OBJE}
 #bonus : ${BONUS}
 
 %.o: %.c
-	${CC} ${FLAGC} -c $< -o $@
+	${CC} ${FLAGC} -I/usr/include -Imlx_linux -O3 -c $< -o $@
 
 clean :
 	rm -f ${OBJE}

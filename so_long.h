@@ -12,6 +12,22 @@
 #  define BUFFER_SIZE 10
 # endif
 
+#define SIZE 64
+#define ESP 65307
+#define Q 113
+#define A 97
+#define W 119
+#define S 115
+#define D 100
+#define UP 65362
+#define RIGHT 65363
+#define DOWN 65364
+#define LEFT 65361
+
+
+
+
+
 typedef     struct so_long
 {
     int fd;
@@ -25,6 +41,17 @@ typedef     struct so_long
     int count_C;
     int count_P;
     int count_E;
+
+    void *mlx_ptr;
+    void *win_ptr;
+
+    void *floor_ptr;
+    void *player_ptr;
+    void *wall_ptr;
+    void  *collec;
+    void *door_ptr;
+    int player_x;
+    int player_y;
 
 } t_so_long;
 
