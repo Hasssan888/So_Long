@@ -17,7 +17,7 @@ char	*ft_strrchr(const char *str, int c)
 int	ft_strcmp(char *s1, char *s2)
 {
 	if (s1 == NULL || s2 == NULL)
-		return -1;
+		return (-1);
 	while (*s1 && *s2 && *s1 == *s2)
 	{
 		s1++;
@@ -50,4 +50,12 @@ char	*ft_strcpy(char *dest, char *src)
 	}
 	dest[i] = '\0';
 	return (dest);
+}
+
+int	str_len_map(char *str)
+{
+	int i = 0;
+	while (str != NULL && str[i] != '\0' && str[i] != '\n')
+		i++;
+	return (i);
 }

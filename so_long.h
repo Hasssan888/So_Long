@@ -42,6 +42,7 @@ typedef     struct so_long
     int count_P;
     int count_E;
 
+    int collect_found;
     void *mlx_ptr;
     void *win_ptr;
 
@@ -50,8 +51,11 @@ typedef     struct so_long
     void *wall_ptr;
     void  *collec;
     void *door_ptr;
+    void *door_over_ptr;
     int player_x;
     int player_y;
+    int door_x;
+    int door_y;
 
 } t_so_long;
 
@@ -73,6 +77,22 @@ char	*ft_strrchr(const char *str, int c);
 int	    ft_strcmp(char *s1, char *s2);
 void	ft_putstr_fd(char *s, int fd);
 char	*ft_strcpy(char *dest, char *src);
+int     str_len_map(char *str);
 
+// move_player.c
+int    check_C(t_so_long *maps, int x, int y);
+int move_player(int keycode, t_so_long *so_long);
+
+// print_map.c
+void    Coordinates_player(t_so_long *so_long);
+void    init_map(t_so_long *so_long);
+void    print_map(t_so_long *so_long);
+
+// check_map.c
+int     hight_width(char *ptr, t_so_long *so_long);
+int     widht_map(t_so_long *so_long);
+char    **cpy_map(char *ptr, t_so_long *so_long);
+int     check_map(t_so_long *maps);
+int     count_C_E_P(t_so_long *maps);
 
 #endif

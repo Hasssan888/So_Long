@@ -6,7 +6,7 @@ NAME = so_long
 
 #BONUS = pipex_bonus
 
-SRC = so_long.c get_next_line_utilis.c get_next_line.c utilis_1.c
+SRC = so_long.c get_next_line_utilis.c get_next_line.c utilis_1.c check_map.c move_player.c print_map.c
 
 #SRC_BONUS =
 

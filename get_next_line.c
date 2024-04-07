@@ -83,8 +83,8 @@ char	*ft_return_s(char *s)
 
 char	*get_next_line(int fd)
 {
-	static char	*s;
-	char		*line_next;
+	static char *s;
+	char *line_next;
 
 	if (fd < 0 || BUFFER_SIZE < 0)
 		return (NULL);

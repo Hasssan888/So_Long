@@ -43,7 +43,7 @@ char	*ft_strjoin(char *s, char *buf)
 	while (buf[j])
 		result[i++] = buf[j++];
 	result[i] = '\0';
-	free (s);
+	free(s);
 	return (result);
 }
 
@@ -64,7 +64,7 @@ char	*ft_strchr(const char *s, int c)
 
 size_t	ft_strlen(const char *s)
 {
-	size_t	len;
+	size_t len;
 
 	len = 0;
 	if (!s)
