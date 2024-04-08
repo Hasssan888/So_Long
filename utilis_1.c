@@ -35,7 +35,8 @@ void	ft_putstr_fd(char *s, int fd)
 	len = 0;
 	while (s[len])
 		len++;
-	write(fd, s, len);
+	ssize_t ret = write(fd, s, len);
+	(void)ret; // Cast the result to void to indicate it's intentionally unused
 }
 
 char	*ft_strcpy(char *dest, char *src)
